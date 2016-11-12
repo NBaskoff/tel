@@ -6,12 +6,11 @@
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>Tel</name>
+    <name>Tele1000.ru</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="nbaskoff@gmail.com" href="http://baskoff.ru">
+        Baskoff
     </author>
     <content src="index.html" />
     <icon src="icon.png" />
