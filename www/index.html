@@ -1,37 +1,115 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Tele1000.ru</title>
-</head>
-
-<body>
-    <div class="app">
-        <h1>Tele1000.ru</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Загрузка...</p>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>Tele1000.ru</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.form.min.js"></script>
+        <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </head>
+    <body class="toc">
+        <div class="bgmodal">
+            <div class="waiting"><img src="img/712.gif" width="64px" height="64px"></div>
         </div>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-</body>
+        <div class="container">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" style="padding:5px;"><img src="img/logo.png" width="40px" height="40px"></a>
+                    </div>
 
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">О проекте <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Информация</a></li>
+                                    <li><a href="#">Контактные данные</a></li>
+                                    <li><a href="#">Как стать экспертом</a></li>
+                                    <li><a href="#">Что-то еще</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Отдельная ссылка</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Еще одна отдельная ссылка</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Номер телефона">
+                            </div>
+                            <button type="submit" class="btn btn-default">Поиск</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right" style="margin-right: -30px">
+                            <li><a href="#">Написать предложение</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Вход<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Авторизация</a></li>
+                                    <li><a href="#">Регистрация</a></li>
+                                    <li><a href="#">Восстановление пароля</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        <div class="container">
+            <div class="panel panel-default" style='margin-top:15px;'>
+                <div class="panel-heading">Добавить телефон в базу</div>
+                <div class="panel-body formAjax" url="http://tele1000.ru/api/1/Phones/AddPhone/">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Телефон</label>
+                            <div class="col-sm-10">
+                                <input type="tel" class="form-control phoneMask" name="phone" placeholder="Телефон">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Группа</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="group">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Пояснение</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="3" name="clarification"></textarea>  
+                            </div>
+                        </div>  
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">Отправить</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>			
+        </div>
+    </body>
 </html>
