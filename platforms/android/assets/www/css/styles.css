@@ -46,4 +46,4 @@ form select {
 form textarea {
   width: 100%;
 }
-/*# sourceMappingURL=styles.css.map */
+.hint {color:gray; font-size: 12px;}
