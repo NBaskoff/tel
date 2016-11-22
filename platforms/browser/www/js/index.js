@@ -28,9 +28,8 @@ jQuery(document).ready(function () {
         jQuery(".inputNomer").css("display","block");
         jQuery(".selectContact").css("display","none");
     });*/    
-    
-    
-    
+    jQuery(".contactLoad").css("display", "block");
+    jQuery(".contactSelect").css("display", "none");
     var options = {
         filter : "",
     };
@@ -43,6 +42,8 @@ jQuery(document).ready(function () {
                 jQuery("select[name=contact]").append('<option value="'+phone.value+'">'+user.displayName+' ('+phone.value+')</option>');
             }
         }
+        jQuery(".contactLoad").css("display", "none");
+        jQuery(".contactSelect").css("display", "block");
     }, function(error) {
         console.log(error);
     }, options);       
