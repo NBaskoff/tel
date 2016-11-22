@@ -46,10 +46,16 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.coolappz.Tel"
         },
-        "cordova-plugin-statusbar": {
+        "cordova-plugin-vibration": {
             "PACKAGE_NAME": "com.coolappz.Tel"
         },
-        "cordova-plugin-vibration": {
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.coolappz.Tel"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.coolappz.Tel"
+        },
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.coolappz.Tel"
         },
         "cordova-plugin-whitelist": {

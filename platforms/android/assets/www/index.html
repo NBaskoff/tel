@@ -13,6 +13,28 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("deviceready", init, false);
+            function init() {
+                navigator.contacts.find([navigator.contacts.fieldType.displayName], gotContacts, errorHandler);
+            }
+            function errorHandler(e) {
+                console.log("errorHandler: " + e);
+            }
+
+            function gotContacts(c) {
+                console.log("gotContacts, number of results " + c.length);
+                mobileDiv = document.querySelector("#mobile");
+                for (var i = 0, len = c.length; i < len; i++) {
+                    if (c[i].phoneNumbers && c[i].phoneNumbers.length > 0) {
+                        for (var p = 0, plen = c[i].phoneNumbers.length; p < plen; p++) {
+                            mobileDiv.innerHTML += "<option value='"+c[i].phoneNumbers[p].value+"'>" + c[i].displayName + " (" + c[i].phoneNumbers[p].value + ")</option>";
+                        }
+                    }
+                }
+            }
+        </script>        
+
         <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/jquery.form.min.js"></script>
@@ -89,8 +111,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Контакт</label>
                             <div class="col-sm-10">
-                                <p class="contactLoad">Загрузка...</p>
-                                <select class="form-control contactSelect" name="contact">
+                                <select class="form-control contactSelect" id="mobile" name="contact">
 
                                 </select>
                             </div>

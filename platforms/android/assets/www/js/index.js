@@ -17,34 +17,5 @@ jQuery(document).ready(function () {
                 jQuery("select[name=group]").append('<option value="'+item.phones_group_id+'">'+item.phones_group_name+'</option>');
             }
         }
-    });
- 
-    
-    /*jQuery(".inputNomer .contactChooser").click(function(){
-        jQuery(".inputNomer").css("display","none");
-        jQuery(".selectContact").css("display","block");
-    });
-    jQuery(".selectContact .contactChooser").click(function(){
-        jQuery(".inputNomer").css("display","block");
-        jQuery(".selectContact").css("display","none");
-    });*/    
-    jQuery(".contactLoad").css("display", "block");
-    jQuery(".contactSelect").css("display", "none");
-    var options = {
-        filter : "",
-    };
-    var fields = ["displayName", "phoneNumbers"];
-    navigator.contacts.find(fields, function(contacts) {
-        for (var key in contacts) {
-            var user = contacts[key];
-            for (var k in user.phoneNumbers) {
-                var phone = user.phoneNumbers[k];
-                jQuery("select[name=contact]").append('<option value="'+phone.value+'">'+user.displayName+' ('+phone.value+')</option>');
-            }
-        }
-        jQuery(".contactLoad").css("display", "none");
-        jQuery(".contactSelect").css("display", "block");
-    }, function(error) {
-        console.log(error);
-    }, options);       
+    });  
 });
