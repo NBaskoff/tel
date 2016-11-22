@@ -19,23 +19,19 @@ jQuery(document).ready(function () {
         }
     });
     jQuery(".contactChooser").click(function(){
-        var options = new ContactFindOptions();
-        options.filter = "";
-        var filter = ["displayName", "phoneNumbers"];
-        navigator.contacts.find(filter, onPickContactSuccess, onPickContactError, options);        
+        var options = {
+            filter : "",
+        };
+        alert(1);
+        var fields = ["displayName", "phoneNumbers"];
+        navigator.contacts.find(fields, function(contacts) {
+            var phone = contacts[0].phoneNumbers[0].value;
+            jQuery(".phoneMask").val(phone);            
+            
+        }, function(error) {
+            console.log(error);
+        }, options);        
     });
     
     
 });
-    function onPickContactError() {
-        
-    }
-    function onPickContactSuccess(contacts){
-        //contacts contains all data you've requested
-
-        var phone = contacts[0].phoneNumbers[0].value;
-        
-        jQuery(".phoneMask").val(phone);
-        
-        //alert('Last: '+_name.familyName+' First: '+_name.givenName);
-    }
