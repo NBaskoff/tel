@@ -18,20 +18,32 @@ jQuery(document).ready(function () {
             }
         }
     });
-    jQuery(".contactChooser").click(function(){
-        var options = {
-            filter : "",
-        };
-        alert(1);
-        var fields = ["displayName", "phoneNumbers"];
-        navigator.contacts.find(fields, function(contacts) {
-            var phone = contacts[0].phoneNumbers[0].value;
-            jQuery(".phoneMask").val(phone);            
-            
-        }, function(error) {
-            console.log(error);
-        }, options);        
+ 
+    
+    /*jQuery(".inputNomer .contactChooser").click(function(){
+        jQuery(".inputNomer").css("display","none");
+        jQuery(".selectContact").css("display","block");
     });
+    jQuery(".selectContact .contactChooser").click(function(){
+        jQuery(".inputNomer").css("display","block");
+        jQuery(".selectContact").css("display","none");
+    });*/    
     
     
+    
+    var options = {
+        filter : "",
+    };
+    var fields = ["displayName", "phoneNumbers"];
+    navigator.contacts.find(fields, function(contacts) {
+        for (var key in contacts) {
+            var user = contacts[key];
+            for (var k in user.phoneNumbers) {
+                var phone = user.phoneNumbers[k];
+                jQuery("select[name=contact]").append('<option value="'+phone.value+'">'+user.displayName+' ('+phone.value+')</option>');
+            }
+        }
+    }, function(error) {
+        console.log(error);
+    }, options);       
 });

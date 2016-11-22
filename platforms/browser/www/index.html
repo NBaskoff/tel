@@ -80,15 +80,18 @@
                 <div class="panel-heading">Добавить телефон в базу</div>
                 <div class="panel-body formAjax" url="http://tele1000.ru/api/1/Phones/AddPhone/">
                     <form class="form-horizontal" role="form">
-                        <div class="form-group">
+                        <div class="form-group inputNomer">
                             <label class="col-sm-2 control-label">Телефон</label>
                             <div class="col-sm-10">
-                                <div class="input-group">
-                                    <input type="tel" class="form-control phoneMask" name="phone" placeholder="Телефон">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default contactChooser" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                                    </span>
-                                </div>
+                                <input type="tel" class="form-control phoneMask" name="phone" placeholder="Телефон">
+                            </div>
+                        </div>
+                        <div class="form-group selectContact">
+                            <label class="col-sm-2 control-label">Контакт</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="contact">
+
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
