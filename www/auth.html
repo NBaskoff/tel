@@ -13,24 +13,7 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript">
-            document.addEventListener("deviceready", init, false);
-            function init() {
-                navigator.contacts.find([navigator.contacts.fieldType.displayName], gotContacts, errorHandler);
-            }
-            function errorHandler(e) {
-            }
-            function gotContacts(c) {
-                mobileDiv = document.querySelector("#mobile");
-                for (var i = 0, len = c.length; i < len; i++) {
-                    if (c[i].phoneNumbers && c[i].phoneNumbers.length > 0) {
-                        for (var p = 0, plen = c[i].phoneNumbers.length; p < plen; p++) {
-                            mobileDiv.innerHTML += "<option value='"+c[i].phoneNumbers[p].value+"'>" + c[i].displayName + " (" + c[i].phoneNumbers[p].value + ")</option>";
-                        }
-                    }
-                }
-            }
-        </script>        
+      
 
         <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -90,71 +73,33 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div>
-                </div>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
             </nav>
         </div>
         <div class="container">
             <div class="panel panel-default" style='margin-top:15px;'>
-                <div class="panel-heading">Добавить телефон в базу</div>
-                <div class="panel-body formAjax" url="http://tele1000.ru/api/1/Phones/AddPhone/">
+                <div class="panel-heading">Авторизация</div>
+                <div class="panel-body formAjax" url="http://tele1000.ru/api/1/Auth/Send/">
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
-                            <label class="col-sm-5 control-label">Введите номер телефона, с которого вам звонили*</label>
+                            <label class="col-sm-5 control-label">Email</label>
                             <div class="col-sm-7">
-                                <input type="tel" class="form-control phoneMask" name="phone" placeholder="Телефон">
-                                <div class="error__phone"></div>
+                                <input type="text" class="form-control" name="email">
+                                <div class="error__email"></div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-5 control-label">Контакт из записной книжки</label>
+                            <label class="col-sm-5 control-label">Пароль</label>
                             <div class="col-sm-7">
-                                <select class="form-control contactSelect" id="mobile" name="contact">
-                                    <option value=""></option>
-                                </select>
-                                <div class="error__contact"></div>
+                                <input type="password" class="form-control" name="pass">
+                                <div class="error__pass"></div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-5 control-label">Выберите группу, к которой относится этот номер*</label>
-                            <div class="col-sm-7">
-                                <select class="form-control" name="group">
 
-                                </select>
-                                <div class="error__group"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-5 control-label">Предложить название группы, которой нет в списк</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="group_add_name">
-                                <div class="error__group_add_name"></div>
-                            </div>
-                        </div>                        
-                        <div class="form-group">
-                            <label class="col-sm-5 control-label">Об этом номере <span class="hint">(кто звонил, из какой организации, что говорили, каким тоном и т.д.)</span></label>
-                            <div class="col-sm-7">
-                                <textarea class="form-control" rows="3" name="comment"></textarea>
-                                <div class="error__comment"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-5 control-label">Задать вопрос эксперту</label>
-                            <div class="col-sm-7">
-                                <textarea class="form-control" rows="3" name="question"></textarea>
-                                <div class="error__question"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-5 control-label">Хочу получить консультацию по этому вопросу на E-mail, Skype или по телефону</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="consultation">
-                                <div class="error__consultation"></div>
-                            </div>
-                        </div>                          
                         <div class="form-group">
                             <div class="col-sm-offset-5 col-sm-7">
-                                <button type="submit" class="btn btn-default">Отправить</button>
+                                <button type="submit" class="btn btn-default">Авторизация</button>
                             </div>
                         </div>
                     </form>

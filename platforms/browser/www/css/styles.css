@@ -47,3 +47,4 @@ form textarea {
   width: 100%;
 }
 .hint {color:gray; font-size: 12px;}
+.error__text {position: relative; width: 100%; font-size: 10px; color:#a94442;}

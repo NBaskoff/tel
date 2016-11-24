@@ -33,7 +33,7 @@ jQuery(document).ready(function () {
                     alert("Ошибка, Попробуйте позже.");
                     alert(data);
                 }
-                if (pdata.error !== null)
+                if (pdata.error !== null && pdata.error !== undefined)
                 {
                     for (var key in pdata.error)
                     {
@@ -51,9 +51,13 @@ jQuery(document).ready(function () {
                 {
                     location.reload();
                 }
+                if (pdata.location !== null && pdata.location !== undefined)
+                {
+                    location.href = pdata.location;
+                }
             }
         };
-        $(this).ajaxSubmit(options);
+        jQuery(this).ajaxSubmit(options);
         return false;
     });
 });
