@@ -1,19 +1,24 @@
 jQuery(document).ready(function () {
-    jQuery.ajax({
-        type: "POST",
-        url: "http://tele1000.ru/api/1/Phones_Group/GetGroups/",
-        dataType: 'json',
-        success: function (data) {
-            //jQuery("textarea").val(location.href);
-            for (var key in data.records) {
-                var item = data.records[key];
-                jQuery("select[name=group]").append('<option value="'+item.phones_group_id+'">'+item.phones_group_name+'</option>');
+    if ($_GET.textOK != undefined) {
+        jQuery(".formAjax").addClass("contentBody").html($_GET.textOK);
+    } else {
+        jQuery.ajax({
+            type: "POST",
+            url: "http://tele1000.ru/api/1/Phones_Group/GetGroups/",
+            dataType: 'json',
+            success: function (data) {
+                //jQuery("textarea").val(location.href);
+                for (var key in data.records) {
+                    var item = data.records[key];
+                    jQuery("select[name=group]").append('<option value="'+item.phones_group_id+'">'+item.phones_group_name+'</option>');
+                }
             }
-        }
-    }); 
-    var now = new Date();
-    jQuery("input[name=date]").val(now.toString('yyyy-MM-dd'));
-    jQuery("input[name=time]").val(now.toString('HH:mm'));
+        }); 
+        var now = new Date();
+        jQuery("input[name=date]").val(now.toString('yyyy-MM-dd'));
+        jQuery("input[name=time]").val(now.toString('HH:mm'));        
+    }    
+
     
     jQuery.ajax({
         type: "POST",
@@ -36,12 +41,5 @@ jQuery(document).ready(function () {
              }
         }
     });
-    
-    
-    var test = new Vue({
-        el: "#test",
-        data: {
-            text: "ntcn",
-        }
-    });
+
 });

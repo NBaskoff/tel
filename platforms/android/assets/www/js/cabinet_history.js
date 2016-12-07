@@ -1,28 +1,4 @@
 jQuery(document).ready(function () {
-    if ($_GET.textOK != undefined) {
-        jQuery(".formAjax").addClass("contentBody").html($_GET.textOK);
-    } else {
-        jQuery.ajax({
-            type: "POST",
-            url: "http://tele1000.ru/api/1/Phones_Group/GetGroups/",
-            dataType: 'json',
-            success: function (data) {
-                //jQuery("textarea").val(location.href);
-                for (var key in data.records) {
-                    var item = data.records[key];
-                    jQuery("select[name=group]").append('<option value="'+item.phones_group_id+'">'+item.phones_group_name+'</option>');
-                }
-            }
-        });
-        var now = new Date();
-        jQuery(".formAjax input[name=date]").val(now.toString('yyyy-MM-dd'));
-        jQuery(".formAjax input[name=time]").val(now.toString('HH:mm'));
-        if ($_GET.phone != undefined) {
-            jQuery(".formAjax input[name=phone]").val($_GET.phone);
-        }
-    }
-
-
     jQuery.ajax({
         type: "POST",
         url: "http://tele1000.ru/api/1/Cabinet/GetHistory/",
@@ -44,5 +20,4 @@ jQuery(document).ready(function () {
              }
         }
     });
-
 });
