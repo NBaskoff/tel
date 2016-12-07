@@ -23,7 +23,6 @@ jQuery(document).ready(function () {
                     if (path == "index.html") {
                         document.location.href='cabinet.html'
                     }                    
-                    
                 } else {
                      document.location.href='auth.html'
                 }
