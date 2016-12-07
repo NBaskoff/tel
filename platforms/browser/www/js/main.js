@@ -2,6 +2,7 @@ var user = null;
 jQuery(document).ready(function () {
     //Проверим юзера и если нету - на авторизацию.
     var path = window.location.pathname;
+    alert(path);
     if (path != "/auth.html" && path != "/reg.html") {
         jQuery.ajax({
             type: "POST",
