@@ -500,6 +500,14 @@ module.exports = [
         "clobbers": [
             "window.FileTransfer"
         ]
+    },
+    {
+        "id": "cordova-plugin-statusbar.statusbar",
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "pluginId": "cordova-plugin-statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -522,7 +530,9 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-vibration": "2.1.2",
     "cordova-plugin-globalization": "1.0.5-dev",
-    "cordova-plugin-file-transfer": "1.6.1-dev"
+    "cordova-plugin-file-transfer": "1.6.1-dev",
+    "cordova-plugin-statusbar": "2.1.3",
+    "cordova-plugin-whitelist": "1.2.2"
 };
 // BOTTOM OF METADATA
 });

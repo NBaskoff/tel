@@ -2,8 +2,10 @@ var user = null;
 jQuery(document).ready(function () {
     //Проверим юзера и если нету - на авторизацию.
     var path = window.location.pathname;
+    path = path.split('/');
+    path = path[path.length - 1];
     alert(path);
-    if (path != "/auth.html" && path != "/reg.html") {
+    if (path != "auth.html" && path != "reg.html") {
         jQuery.ajax({
             type: "POST",
             url: "http://tele1000.ru/api/1/Auth/GetUser/",
