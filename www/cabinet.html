@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>Tele1000.ru</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("deviceready", init, false);
+            function init() {
+                navigator.contacts.find([navigator.contacts.fieldType.displayName], gotContacts, errorHandler);
+            }
+            function errorHandler(e) {
+            }
+            function gotContacts(c) {
+                mobileDiv = document.querySelector("#mobile");
+                for (var i = 0, len = c.length; i < len; i++) {
+                    if (c[i].phoneNumbers && c[i].phoneNumbers.length > 0) {
+                        for (var p = 0, plen = c[i].phoneNumbers.length; p < plen; p++) {
+                            mobileDiv.innerHTML += "<option value='" + c[i].phoneNumbers[p].value + "'>" + c[i].displayName + " (" + c[i].phoneNumbers[p].value + ")</option>";
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.form.min.js"></script>
+        <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript" src="js/date.js"></script>
+        <script type="text/javascript" src="js/cabinet.js"></script>
+    </head>
+    <body class="toc">
+        <div class="bgmodal">
+            <div class="waiting"><img src="img/712.gif" width="64px" height="64px"></div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" style="padding:5px;"><img src="img/logo.png" width="40px" height="40px"></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="expert.html">Стать экспертом</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                            <li><a href="feed.html">Вопрос эксперту / юристу</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-left" method="GET" role="search" action="index.html">
+                            <div class="form-group">
+                                <input type="text" name="phone" class="form-control phoneMask" placeholder="Номер телефона">
+                            </div>
+                            <button type="submit" class="btn btn-default">Поиск</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right" style="margin-right: -30px">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Личный кабинет <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="cabinet.html">Вопрос эксперту / юристу</a></li>
+                                    <li><a href="cabinet_questions.html">Вопросы эксперту</a></li>
+                                    <li><a href="cabinet_history.html">История звонков</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="exit.html">Выход</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="panel panel-default" style='margin-top:15px;'>
+                <div class="panel-heading">Вопрос эксперту / юристу</div>
+                <div class="panel-body formAjax" url="http://tele1000.ru/api/1/Phones/AddPhone/">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Введите номер телефона, с которого вам звонили *</label>
+                            <div class="col-sm-7">
+                                <input type="tel" class="form-control phoneMask" name="phone" placeholder="Телефон">
+                                <div class="error__phone"></div>
+                                <div class="phoneExist" style="display: none;">
+                                    <a src="phones.html?id=[id]" href="">Есть такой номер! Посмотреть описание и комментарии экспертов.</a>
+                                </div>                                        
+                                <div class="phoneExpertComment"  style="display: none;">
+                                    <b>Комментарий эксперта:</b> <span></span>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Контакт из записной книжки</label>
+                            <div class="col-sm-7">
+                                <select class="form-control contactSelect" id="mobile" name="contact">
+                                    <option value=""></option>
+                                </select>
+                                <div class="error__contact"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Дата и время *</label>
+                            <div class="col-sm-7">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="date" class="form-control" name="date">
+                                        <div class="error__date"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="time" class="form-control" name="time">
+                                        <div class="error__time"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Выберите группу, к которой относится этот номер *</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" name="group">
+
+                                </select>
+                                <div class="error__group"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Предложить название группы, которой нет в списке</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" name="group_add_name">
+                                <div class="error__group_add_name"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Владелец номера *</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" name="master">
+                                <div class="error__master"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Описание звонка * <span class="hint">(кто звонил, из какой организации, что говорили, каким тоном и т.д.)</span></label>
+                            <div class="col-sm-7">
+                                <textarea class="form-control" rows="3" name="body"></textarea>
+                                <div class="error__body"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Задать вопрос эксперту</label>
+                            <div class="col-sm-7">
+                                <textarea class="form-control" rows="3" name="question"></textarea>
+                                <div class="error__question"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label">Хочу получить консультацию по этому вопросу на E-mail, Skype или по телефону</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" name="consultation">
+                                <div class="error__consultation"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-5 col-sm-7">
+                                <button type="submit" name="save" value="save" class="btn btn-default btn-block">Добавить номер, с которого вам звонили</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="panel panel-default" style='margin-top:15px;'>
+                <div class="panel-heading">История звонков</div>
+                <div class="panel-body">
+                    <table id="historyTable" class="table table-bordered table-hover table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Звонок с номера</th>
+                                <th>Дата звонка</th>
+                                <th>Группа</th>
+                                <th>Владелец</th>
+                                <th>Подробности разговора</th>
+                                <th>Комментарии эксперта</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

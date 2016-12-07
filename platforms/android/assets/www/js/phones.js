@@ -10,7 +10,7 @@ jQuery(document).ready(function () {
             jQuery(".phoneGroup").html(data.record.phones_group[0].phones_group_name);
             jQuery(".phoneUser").html(data.record.phones_user[0].user_name);
             jQuery(".phoneBody").html(data.record.phones_body);
-            jQuery(".phoneLink").attr("href", "index.html?phone="+encodeURIComponent(data.record.phones_name));
+            jQuery(".phoneLink").attr("href", "cabinet.html?phone="+encodeURIComponent(data.record.phones_name));
             
             for (var i = 0; i < data.comments.length; i++) {
                  var item = data.comments[i];

@@ -20,12 +20,17 @@ jQuery(document).ready(function () {
                 }
                 if (pdata != null) {
                     user = pdata;
+                    if (path == "index.html") {
+                        document.location.href='cabinet.html'
+                    }                    
+                    
                 } else {
                      document.location.href='auth.html'
                 }
             }
         });         
-    };
+    }
+    
     jQuery(".phoneMask").mask("+7 (999) 999-9999");    
     
     jQuery("body").on("click", "a", function () {
