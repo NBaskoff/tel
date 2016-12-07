@@ -20,6 +20,7 @@
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/ajax.js"></script>
         <script type="text/javascript" src="js/date.js"></script>
+        <script type="text/javascript" src="js/phones.js"></script>
     </head>
     <body class="toc">
         <div class="bgmodal">
@@ -66,58 +67,34 @@
             </nav>
         </div>
         <div class="container">
-            <div class="panel panel-default contentPage" style='margin-top:15px;' page="11">
-                <div class="panel-heading contentPage_name"></div>
-                <div class="panel-body contentPage_body"></div>
-            </div>
             <div class="panel panel-default" style='margin-top:15px;'>
-                <div class="panel-heading">НАПИШИТЕ ПОЧЕМУ ВЫ ХОТИТЕ СТАТЬ ЭКСПЕРТОМ И КОНСУЛЬТИРОВАТЬ НАШИХ ПОЛЬЗОВАТЕЛЕЙ И КОРОТКО О СЕБЕ</div>
+                <div class="panel-heading phoneName"></div>
                 <div class="panel-body">
-                    <div class="formAjax form1000" url="http://tele1000.ru/api/1/Page_Expert/Send/">
-                    <form method="POST" enctype="multipart/form-data" role="form" class="form-horizontal">
-                        <div class="form-group">
-                            <div class="col-sm-offset-4 col-sm-8">Поля, отмеченные знаком * обязательные для заполнения</div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">ФИО *</label>
-                            <div class="col-sm-8">
-                                <input type="text" name="name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Телефон *</label>
-                            <div class="col-sm-8">
-                                <input type="text" name="phone" class="form-control phoneMask">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Email *</label>
-                            <div class="col-sm-8">
-                                <input type="text" name="email" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Текст сообщения *</label>
-                            <div class="col-sm-8">
-                                <textarea class="form-control" name="body"  style="height: 200px;"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Прикрепить файл</label>
-                            <div class="col-sm-8">
-                                <input type="file" name="files" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-4 col-sm-4">
-                                <div class="load__box" style="display: none;">Отправка, подождите...</div>
-                            </div>
-                            <div class="col-sm-4">
-                                <button type="submit" name="save" value="save" class="btn btn-primary btn-block">Отправить сообщение</button>
-                            </div>
-                        </div>                        
-                    </form>
-                </div>  
+                    <p>
+                        <b>Группа:</b> <span class="phoneGroup"></span><br>
+                        <b>Владелец:</b> <span class="phoneUser"></span><br>
+                    </p>
+                    <h3>Комментарии и советы эксперта:</h3>
+                    <span class="phoneBody"></span>
+                    <a class="phoneLink" href="index.html">
+                        <div class="btn btn-primary" style="margin-bottom: 15px;">Мне звонил этот номер (задать вопрос эксперту)</div>
+                    </a>
+                    <table id="historyTable" class="table table-bordered table-hover table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Звонок с номера</th>
+                                <th>Дата звонка</th>
+                                <th>Группа</th>
+                                <th>Владелец</th>
+                                <th>Подробности разговора</th>
+                                <th>Комментарии эксперта</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

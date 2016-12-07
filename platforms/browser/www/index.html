@@ -38,7 +38,6 @@
         <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/ajax.js"></script>
-        <script type="text/javascript" src="js/vue.min.js"></script>
         <script type="text/javascript" src="js/date.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </head>
@@ -96,6 +95,12 @@
                             <div class="col-sm-7">
                                 <input type="tel" class="form-control phoneMask" name="phone" placeholder="Телефон">
                                 <div class="error__phone"></div>
+                                <div class="phoneExist" style="display: none;">
+                                    <a src="phones.html?id=[id]" href="">Есть такой номер! Посмотреть описание и комментарии экспертов.</a>
+                                </div>                                        
+                                <div class="phoneExpertComment"  style="display: none;">
+                                    <b>Комментарий эксперта:</b> <span></span>
+                                </div>                                
                             </div>
                         </div>
                         <div class="form-group">
