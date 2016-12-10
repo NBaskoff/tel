@@ -64,3 +64,4 @@ form textarea {
                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be01d5', endColorstr='#20086f',GradientType=0 ); /* IE6-9 */
     
 }
+.panel-default>.panel-heading {font-weight: bold;}
