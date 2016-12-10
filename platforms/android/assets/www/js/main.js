@@ -20,8 +20,8 @@ jQuery(document).ready(function () {
                 }
                 if (pdata != null) {
                     user = pdata;
-                    if (path == "index.html") {
-                        document.location.href='cabinet.html'
+                    if (path == "index.html" || path == "") {
+                        $(".animate").animate({opacity: 0}, 1500, "linear", function() {/*document.location.href='cabinet.html';*/})
                     }                    
                 } else {
                      document.location.href='auth.html'

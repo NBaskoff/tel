@@ -1,42 +1,20 @@
 /* ================================================== */
 /* User styles */
-html {
-  height: 100%;
-}
+html {min-height: 100%;}
 /* ================================================== */
-.toc {
-  padding: 0;
-  margin: 0;
-  height: 100%;
+body {color:#33077b;}
+.toc {padding: 0; margin: 0; min-height: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e94de2+1,0f074e+100 */
+    background: #e94de2; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e94de2 1%, #0f074e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #e94de2 1%,#0f074e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #e94de2 1%,#0f074e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e94de2', endColorstr='#0f074e',GradientType=0 ); /* IE6-9 */
+    color:#33077b;
 }
-.toc .bgmodal {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: #000000;
-  z-index: 1000;
-  display: none;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-  filter: alpha(opacity=70);
-  -moz-opacity: 0.7;
-  -khtml-opacity: 0.7;
-  opacity: 0.7;
-}
-.toc .bgmodal .waiting {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 64px;
-  height: 64px;
-  opacity: 1;
-  margin: -32px 0 0 -32px;
-}
-form input {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #000000;
-}
+.toc .bgmodal { position: fixed; width: 100%; height: 100%; background: #000000; z-index: 1000; display: none; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; filter: alpha(opacity=70); -moz-opacity: 0.7; -khtml-opacity: 0.7; opacity: 0.7;}
+.toc .bgmodal .waiting {position: fixed; top: 50%; left: 50%; width: 64px; height: 64px; opacity: 1; margin: -32px 0 0 -32px;}
+form input {width: 100%; padding: 0; margin: 0; border: 1px solid #000000;}
 form input[type=checkbox] {
   width: auto;
 }
@@ -49,3 +27,35 @@ form textarea {
 .hint {color:gray; font-size: 12px;}
 .error__text {position: relative; width: 100%; font-size: 10px; color:#a94442;}
 .clear {position: relative; clear: both; width: 100%; height: 1px;}
+
+.navbar-default {background: #33077b; border: none;}
+.navbar-default .navbar-nav>li>a {color: #ffffff;}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.active>a {background: #33077b;}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {color: #ffffff;}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {background: #33077b; color: #ffffff;}
+.dropdown-menu {background: #33077b; }
+.dropdown-menu>li>a {color: #ffffff;}
+.navbar-default .navbar-toggle {border-color: #ffffff; color:#ffffff;}
+.navbar-default .navbar-toggle .icon-bar {background-color: #ffffff;}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background: none;}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {color: #ffffff;}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {background: #33077b; color: #ffffff;}
+.panel-default>.panel-heading {background: #33077b; border: none; color: #ffffff;}
+.panel {border: 1px solid #33077b;}
+.btn-primary {color:#ffffff; font-size: 16px; border:none; border-radius: 5px;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#be01d5+0,20086f+100 */
+                background: #be01d5; /* Old browsers */
+                background: -moz-linear-gradient(top,  #be01d5 0%, #20086f 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  #be01d5 0%,#20086f 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom,  #be01d5 0%,#20086f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be01d5', endColorstr='#20086f',GradientType=0 ); /* IE6-9 */
+}
+.btn-primary:hover, .btn-primary:focus {
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#be01d5+0,20086f+100 */
+                background: #be01d5; /* Old browsers */
+                background: -moz-linear-gradient(top,  #be01d5 0%, #20086f 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  #be01d5 0%,#20086f 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom,  #be01d5 0%,#20086f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be01d5', endColorstr='#20086f',GradientType=0 ); /* IE6-9 */
+    
+}
