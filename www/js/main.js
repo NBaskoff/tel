@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
                         $(".animate").animate({opacity: 0}, 1500, "linear", function() {document.location.href='cabinet.html';})
                     }                    
                 } else {
-                     document.location.href='auth.html'
+                    $(".animate").animate({opacity: 0}, 1500, "linear", function() {document.location.href='auth.html';})
                 }
             }
         });         
