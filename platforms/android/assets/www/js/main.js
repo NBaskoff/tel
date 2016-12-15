@@ -21,17 +21,19 @@ jQuery(document).ready(function () {
                 if (pdata != null) {
                     user = pdata;
                     if (path == "index.html" || path == "") {
-                        $(".animate").animate({opacity: 0}, 1500, "linear", function() {document.location.href='cabinet.html';})
-                    }                    
+                        $(".animate").click(function(){document.location.href='cabinet.html';});
+                        $(".animate").animate({opacity: 0}, 2500, "linear", function() {document.location.href='cabinet.html';})
+                    }
                 } else {
-                    $(".animate").animate({opacity: 0}, 1500, "linear", function() {document.location.href='auth.html';})
+                    $(".animate").click(function(){document.location.href='auth.html';});
+                    $(".animate").animate({opacity: 0}, 2500, "linear", function() {document.location.href='auth.html';})
                 }
             }
-        });         
+        });
     }
-    
-    jQuery(".phoneMask").mask("+7 (999) 999-9999");    
-    
+
+    jQuery(".phoneMask").mask("+7 (999) 999-9999");
+
     jQuery("body").on("click", "a", function () {
         var text = jQuery(this).attr("question");
         if (text != undefined)
@@ -69,7 +71,7 @@ jQuery(document).ready(function () {
                 jQuery(".contentPage_name").html(pdata.page_name);
                 jQuery(".contentPage_body").html(pdata.page_body);
             }
-        });        
+        });
     });
 });
 function parseURLParams(url) {

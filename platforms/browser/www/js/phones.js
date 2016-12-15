@@ -11,18 +11,23 @@ jQuery(document).ready(function () {
             jQuery(".phoneUser").html(data.record.phones_user[0].user_name);
             jQuery(".phoneBody").html(data.record.phones_body);
             jQuery(".phoneLink").attr("href", "cabinet.html?phone="+encodeURIComponent(data.record.phones_name));
-            
+            for (var i = 0; i < data.record.phones_files.length; i++) {
+                var item = data.record.phones_files[i];
+                var html = '<a href="http://tele1000.ru'+item.files_path+'">'+item.files_name+'</a><br>';
+                jQuery(".phoneFiles").append(html);
+            }
             for (var i = 0; i < data.comments.length; i++) {
                  var item = data.comments[i];
                  var html = '<tr>\n\
-                                <td>'+item.phones_calls_id+'</td>\n\
-                                <td>'+data.record.phones_name+'</td>\n\
-                                <td>'+item.phones_calls_dt+'</td>\n\
-                                <td>'+item.phones_calls_group[0].phones_group_name+'</td>\n\
-                                <td>'+data.record.phones_user[0].user_name+'</td>\n\
-                                <td>'+item.phones_calls_clarification+'</td>\n\
-                                <td>'+data.record.phones_body+'</td>\n\
+                                <td>'+item.phones_calls_id+'<br>\n\
+                                '+data.record.phones_name+'<br>\n\
+                                '+item.phones_calls_dt+'<br>\n\
+                                '+item.phones_calls_group[0].phones_group_name+'<br>\n\
+                                '+data.record.phones_user[0].user_name+'<br>\n\
+                                '+item.phones_calls_clarification+'<br>\n\
+                                '+data.record.phones_body+'<br></td>\n\
                             </tr>';
+                
                 jQuery("#historyTable tbody").append(html);
              }
         }
