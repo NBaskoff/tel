@@ -74,6 +74,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="http://tele1000.ru/*" />
     <icon density="ldpi" src="www/res/icon/logo.png" />
     <icon density="mdpi" src="www/res/icon/logo.png" />
     <icon density="hdpi" src="www/res/icon/logo.png" />
