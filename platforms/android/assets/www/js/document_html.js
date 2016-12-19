@@ -15,16 +15,19 @@ jQuery(document).ready(function () {
            jQuery(".getLink").each(function(){
               var url = jQuery(this).attr("link");
               url = url.replace("[id]", data.document_items_id);
+              url = url.replace("[user]", user.user_id);
               jQuery(this).attr("href", url);
            });
            jQuery(".getSrc").each(function(){
               var url = jQuery(this).attr("link");
               url = url.replace("[id]", data.document_items_id);
+              url = url.replace("[user]", user.user_id);
               jQuery(this).attr("src", url);
            });  
            jQuery(".getOwner").each(function(){
               var url = jQuery(this).attr("link");
               url = url.replace("[id]", data.document_items_owner);
+              url = url.replace("[user]", user.user_id);
               jQuery(this).attr("href", url);
            });             
         }
