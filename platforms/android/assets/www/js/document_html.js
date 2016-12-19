@@ -24,6 +24,8 @@ jQuery(document).ready(function () {
               url = url.replace("[user]", user.user_id);
               jQuery(this).attr("src", url);
            });  
+           var url = '<iframe width="100%" height="560px" src="http://tele1000.ru/document/show/'+data.document_items_id+'"></iframe>';
+           jQuery(".iframeShow").html(url);
            jQuery(".getOwner").each(function(){
               var url = jQuery(this).attr("link");
               url = url.replace("[id]", data.document_items_owner);
