@@ -12,28 +12,20 @@ jQuery(document).ready(function () {
         dataType: 'json',
         success: function (data) {
            jQuery(".documentName").html(data.document_items_name);
-           jQuery(".getLink").each(function(){
-              var url = jQuery(this).attr("link");
-              url = url.replace("[id]", data.document_items_id);
-              url = url.replace("[user]", user.user_id);
-              jQuery(this).attr("href", url);
-           });
-           jQuery(".getSrc").each(function(){
-              var url = jQuery(this).attr("link");
-              url = url.replace("[id]", data.document_items_id);
-              url = url.replace("[user]", user.user_id);
-              jQuery(this).attr("src", url);
-           });  
-           var url = '<iframe width="100%" height="560px" src="http://tele1000.ru/document/showHtml/'+data.document_items_id+'?user='+user.user_id+'"></iframe>';
-           jQuery(".iframeShow").html(url);
-           jQuery(".getOwner").each(function(){
-              var url = jQuery(this).attr("link");
-              url = url.replace("[id]", data.document_items_owner);
-              url = url.replace("[user]", user.user_id);
-              jQuery(this).attr("href", url);
-           });             
+            var exurl = 'http://tele1000.ru/document/download/'+data.document_items_id+'?user='+user.user_id+'';
+            var url = '<a class="getLink" href="#" onclick="window.open('+"'"+exurl+"'"+', '+"'"+'_system'+"'"+');">\n\
+                        <div class="btn btn-primary" style="margin-bottom: 15px;">Посмотреть / Скачать</div>\n\
+                    </a>\n\
+                    <a class="getOwner" href="document.html?id='+data.document_items_owner+'">\n\
+                        <div class="btn btn-primary" style="margin-bottom: 15px;">Вернуться назад</div>\n\
+                    </a>\n\
+                    <div class="clear"></div>\n\
+                    <div class="iframeShow">\n\
+                        <iframe width="100%" height="560px" src="http://tele1000.ru/document/showHtml/'+data.document_items_id+'?user='+user.user_id+'"></iframe>\n\
+                    </div>';
+           jQuery(".iframeBtnShow").html(url);
         }
     });    
-
+    
     
 });

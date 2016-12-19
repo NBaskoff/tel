@@ -27,7 +27,8 @@ form textarea {
 .hint {color:gray; font-size: 12px;}
 .error__text {position: relative; width: 100%; font-size: 10px; color:#a94442;}
 .clear {position: relative; clear: both; width: 100%; height: 1px;}
-
+.iframeShow {position: relative; float: left; width: 100%; box-sizing: border-box; border:1px solid #33077b;}
+.iframeShow iframe {border: none;}
 .phoneExist {position: relative; width: 100%; box-sizing: border-box; padding: 5px 10px 5px 38px; font-size: 14px; background: url(../img/1481162978_tick_red.png) 5px center no-repeat #ffffff; background-size: 28px; color:#ff4949; font-weight: bold; border-radius: 5px; margin: 5px 0 0 0;}
 .phoneExist a {text-decoration: underline; color:#ff4949; font-weight: bold;}
 .phoneExpertComment {position: relative; width: 100%;  box-sizing: border-box; padding: 5px 10px; font-size: 14px; background: #ffffff;  border-radius: 5px; margin: 5px 0 0 0;}
