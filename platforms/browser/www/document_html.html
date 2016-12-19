@@ -19,7 +19,8 @@
         <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/ajax.js"></script>
-        <script type="text/javascript" src="js/auth.js"></script>
+        <script type="text/javascript" src="js/date.js"></script>
+        <script type="text/javascript" src="js/document_html.js"></script>
     </head>
     <body class="toc">
         <div class="bgmodal">
@@ -30,7 +31,7 @@
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenuAuth">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -38,53 +39,28 @@
                         </button>
                         <a class="navbar-brand" href="#" style="padding:5px;"><img src="img/logo.png" width="40px" height="40px"></a>
                     </div>
-                    <div class="collapse navbar-collapse" id="mainMenuAuth">
+                    <div class="collapse navbar-collapse" id="mainMenu">
                     </div>
-                </div><!-- /.container-fluid -->
+                </div>
             </nav>
         </div>
         <div class="container">
             <div class="panel panel-default" style='margin-top:15px;'>
-                <div class="panel-heading">Авторизация</div>
-                <div class="panel-body formAjax" url="http://tele1000.ru/api/1/Auth/Send/">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="col-sm-5 control-label">Email</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="email">
-                                <div class="error__email"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-5 control-label">Пароль</label>
-                            <div class="col-sm-7">
-                                <input type="password" class="form-control" name="pass">
-                                <div class="error__pass"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-5 col-sm-7 checkbox">
-                                <label>
-                                    <input type="checkbox" value="Y" name="save" checked="1"> Запомнить логин и пароль
-                                </label>
-                            </div>
-                        </div>
-                       
-                        <div class="form-group">
-                            <div class="col-sm-offset-5 col-sm-7">
-                                <button type="submit" class="btn btn-primary btnAuth">Авторизация</button>
-                            </div>
-                        </div>
-                    </form>
+                <div class="panel-heading documentName"></div>
+                <div class="panel-body">
+                    <a class="getLink" href="#" link="http://tele1000.ru/document/show/[id]">
+                        <div class="btn btn-primary" style="margin-bottom: 15px;">Посмотреть</div>
+                    </a>
+                    <a class="getLink" href="#" link="http://tele1000.ru/document/download/[id]">
+                        <div class="btn btn-primary" style="margin-bottom: 15px;">Скачать</div>
+                    </a>
+                    <a class="getOwner" href="#" link="document.html?id=[id]">
+                        <div class="btn btn-primary" style="margin-bottom: 15px;">Вернуться назад</div>
+                    </a>
+
+                    <iframe class="getSrc" width="100%" height="560px" src="#" link="http://tele1000.ru/document/show/[id]"></iframe>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12" style="text-align: center;">
-                    <img src="img/leftIcon.png" style="margin: 5px; margin-top: 20px; max-width: 100%">
-                </div>
-            </div>
-        </div>        
     </body>
 </html>

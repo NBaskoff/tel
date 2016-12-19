@@ -65,3 +65,11 @@ form textarea {
     
 }
 .panel-default>.panel-heading {font-weight: bold;}
+.btn-primary:active:hover, .btn-primary.active:hover, .open>.dropdown-toggle.btn-primary:hover, .btn-primary:active:focus, .btn-primary.active:focus, .open>.dropdown-toggle.btn-primary:focus, .btn-primary:active.focus, .btn-primary.active.focus, .open>.dropdown-toggle.btn-primary.focus {
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#be01d5+0,20086f+100 */
+                background: #be01d5; /* Old browsers */
+                background: -moz-linear-gradient(top,  #be01d5 0%, #20086f 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  #be01d5 0%,#20086f 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom,  #be01d5 0%,#20086f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be01d5', endColorstr='#20086f',GradientType=0 ); /* IE6-9 */
+}

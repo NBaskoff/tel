@@ -31,6 +31,38 @@ jQuery(document).ready(function () {
             }
         });
     }
+    var mainMenuAuth = '\n\
+                        <ul class="nav navbar-nav navbar-right" style="margin-right: -30px">\n\
+                            <li><a href="auth.html">Авторизация</a></li>\n\
+                            <li><a href="reg.html">Регистрация</a></li>\n\
+                            <li><a href="#">Восстановление пароля</a></li>\n\
+                        </ul>';
+    jQuery("#mainMenuAuth").html(mainMenuAuth);
+    var mainMenu = '\n\
+                        <ul class="nav navbar-nav">\n\
+                            <li><a href="expert.html">Стать экспертом</a></li>\n\
+                            <li><a href="contacts.html">Контакты</a></li>\n\
+                            <li><a href="feed.html">Вопрос юристу</a></li>\n\
+                            <li><a href="document.html">Документы</a></li>\n\
+                        </ul>\n\
+                        <form class="navbar-form navbar-left" method="GET" role="search" action="cabinet.html">\n\
+                            <div class="form-group">\n\
+                                <input type="text" name="phone" class="form-control phoneMask" placeholder="Номер телефона">\n\
+                            </div>\n\
+                            <button type="submit" class="btn btn-primary">Поиск</button>\n\
+                        </form>\n\
+                        <ul class="nav navbar-nav navbar-right" style="margin-right: -30px">\n\
+                            <li class="dropdown">\n\
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Личный кабинет <b class="caret"></b></a>\n\
+                                <ul class="dropdown-menu">\n\
+                                    <li><a href="cabinet.html">Вопрос эксперту / юристу</a></li>\n\
+                                    <li><a href="cabinet_questions.html">Ответы экспертов</a></li>\n\
+                                    <li><a href="cabinet_history.html">История звонков</a></li>\n\
+                                </ul>\n\
+                            </li>\n\
+                            <li><a href="exit.html">Выход</a></li>\n\
+                        </ul>';
+    jQuery("#mainMenu").html(mainMenu);
 
     jQuery(".phoneMask").mask("+7 (999) 999-9999");
 
