@@ -585,6 +585,14 @@ module.exports = [
         "merges": [
             "window.StatusBar"
         ]
+    },
+    {
+        "file": "plugins/io.gvox.plugin.phonecalltrap/www/PhoneCallTrap.js",
+        "id": "io.gvox.plugin.phonecalltrap.PhoneCallTrap",
+        "pluginId": "io.gvox.plugin.phonecalltrap",
+        "clobbers": [
+            "window.PhoneCallTrap"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -609,7 +617,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-vibration": "2.1.2",
     "cordova-plugin-statusbar": "2.1.3",
-    "cordova-plugin-whitelist": "1.2.2"
+    "cordova-plugin-whitelist": "1.2.2",
+    "io.gvox.plugin.phonecalltrap": "0.1.2"
 }
 // BOTTOM OF METADATA
 });

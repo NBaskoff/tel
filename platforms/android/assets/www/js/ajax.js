@@ -33,27 +33,26 @@ jQuery(document).ready(function () {
                     alert("Ошибка, Попробуйте позже.");
                     alert(data);
                 }
-                if (pdata.error !== null && pdata.error !== undefined)
-                {
-                    for (var key in pdata.error)
-                    {
-                        var val = pdata.error[key];
-                        jQuery(".error__" + key + "", box).text(val);
-                        var el = jQuery("*[name=" + key + "]", box);
-                        jQuery(el).parents(".form-group").eq(0).addClass("has-error");
-                        jQuery(".codeConfirmImgSrc_img").attr("src", pdata.codeConfirmImgSrc);
-                    }
-                } else
-                {
-                    jQuery(box).addClass("contentBody").html(pdata.text);
-                }
-                if (pdata.reload == true)
-                {
+                if (pdata.reload == true) {
                     location.reload();
-                }
-                if (pdata.location !== null && pdata.location !== undefined)
-                {
+                } else if (pdata.location !== null && pdata.location !== undefined) {
                     location.href = pdata.location;
+                } else {
+                    if (pdata.error !== null && pdata.error !== undefined) {
+                        for (var key in pdata.error) {
+                            var val = pdata.error[key];
+                            jQuery(".error__" + key + "", box).text(val);
+                            var el = jQuery("*[name=" + key + "]", box);
+                            jQuery(el).parents(".form-group").eq(0).addClass("has-error");
+                            jQuery(".codeConfirmImgSrc_img").attr("src", pdata.codeConfirmImgSrc);
+                        }
+                    } else {
+                        jQuery(box).addClass("contentBody").html(pdata.text);
+                    }
+                    if (jQuery(box).attr("function") != undefined) {
+                        var fnName = jQuery(box).attr("function");
+                        window[fnName](pdata);
+                    }
                 }
             }
         };

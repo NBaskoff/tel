@@ -60,6 +60,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.coolappz.Tel"
+        },
+        "io.gvox.plugin.phonecalltrap": {
+            "PACKAGE_NAME": "com.coolappz.Tel"
         }
     },
     "dependent_plugins": {

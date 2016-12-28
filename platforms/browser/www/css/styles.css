@@ -74,3 +74,5 @@ form textarea {
                 background: linear-gradient(to bottom,  #be01d5 0%,#20086f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be01d5', endColorstr='#20086f',GradientType=0 ); /* IE6-9 */
 }
+.findBox .thumbnail .caption {color:#33077b;}
+.findBox .thumbnail .caption h3 {margin-top: 0px; font-size: 20px;}

@@ -44,6 +44,7 @@ jQuery(document).ready(function () {
                             <li><a href="contacts.html">Контакты</a></li>\n\
                             <li><a href="feed.html">Вопрос юристу</a></li>\n\
                             <li><a href="document.html">Документы</a></li>\n\
+                            <li><a href="plid.html">Внести данные в записную книжку по ID PL*</a></li>\n\
                         </ul>\n\
                         <form class="navbar-form navbar-left" method="GET" role="search" action="cabinet.html">\n\
                             <div class="form-group">\n\
